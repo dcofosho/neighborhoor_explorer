@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neighborhood Search App</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="container">
+	<div class="options-box">
+		<h1>Explore a new neighborhood</h1>
+		<div>
+			<input id="show-listings" type="button" value="Show Markers">
+			<input id="hide-listings" type="button" value="Hide Markers">
+			<input id="delete-listings" type="button" value="Delete Markers">
+			<form id="poiTypes" action="">
+				<input type="radio" name="type" value="restaurant">Restaurants<br>
+				<input type="radio" name="type" value="bar">Bar<br>
+				<input type="radio" name="type" value="store" checked="true">Stores<br>
+				<input type="radio" name="type" value="atm">ATMs<br>
+				<input type="radio" name="type" value="transit_station">Transit Stations<br>
+				<input type="radio" name="type" value="lodging">Lodging<br>
+				<input type="radio" name="type" value="movie_theater">Movie Theaters<br>
+				<input type="radio" name="type" value="night_club">Night Clubs<br>
+				<input type="radio" name="type" value="casino">Casinos<br>
+				<input type="radio" name="type" value="park">Parks<br>
+				<input type="radio" name="type" value="museum">Museums<br>
+				<input type="radio" name="type" value="hospital">Hospitals<br>
+				<input type="radio" name="type" value="pharmacy">Pharmacies<br>
+				<input type="radio" name="type" value="campground">Campground<br>
+				<input type="radio" name="type" value="rv_park">RV park<br>
+				<input type="radio" name="type" value="gas_station">Gas Stations<br>
+			</form>
+			<br>
+			<br>
+			Radius in meters
+			<input id="radius_input" type="number" value="500">
+			<br>
+			<input id="address" type="textbox" value="Sydney, NSW">
+			<input type="button" value="Search" onclick="codeAddress()">
+			<br>
+			<div id="item-list"></div>
+			<div class="wikipedia-container">
+        
+		</div>
+	</div>
+	<div id="map" height="100%"></div>
+</div>
+<script src="js/libs/jquery.min.js"></script>
+<script async defer src="js/app.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places&key=AIzaSyBI73nUwv6N-UOQcpIA7_B9ZwMggXHKMSw&callback=initMap"></script>
+<div>
+
+</div>
+</body>
+</html>
