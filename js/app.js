@@ -3,6 +3,7 @@ var addresses = [];
 var markers= [];
 var infowindows = [];
 var placenames=[];
+var infowindow;
 var $wikiElem = $('#wikipedia-links');
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -68,7 +69,7 @@ function createMarker(place) {
 		position: place.geometry.location
 	});
 	markers.push(marker);
-	var infowindow = new google.maps.InfoWindow({content: place.name});
+	infowindow = new google.maps.InfoWindow({content: place.name});
 	infowindows.push(infowindow);
 	marker.addListener('click', function(){
 	populateInfoWindow(marker, infowindow);
@@ -76,7 +77,11 @@ function createMarker(place) {
 }
 
 function populateInfoWindow(marker, infowindow) {
-	initMap();
+	try {
+		if(infowindow){infowindow.close();}
+	} catch(err){
+		console.log(err);
+	}
 	map.center = marker.position;
 	// In case the status is OK, which means the pano was found, compute the
 	// position of the streetview image, then calculate the heading, then get a
