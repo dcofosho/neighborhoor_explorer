@@ -107,10 +107,7 @@ function populateInfoWindow(marker, infowindow) {
 				'<div>No Street View Found</div>');
 		}
 	}
-	for(var i=0; i<infowindows.length; i++){
-		infowindows[i].close();
-	}
-	if(infowindow){infowindow.close();}
+	
 	// Check to make sure the infowindow is not already opened on this marker.
 	if (infowindow.marker != marker) {
 	// Clear the infowindow content to give the streetview time to load.
